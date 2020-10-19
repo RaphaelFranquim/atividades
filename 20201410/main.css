@@ -1,0 +1,45 @@
+:root{
+    --color-yellow: #EDAE49;
+    --color-red: #D1495B;
+    --color-metallic-blue: #00798C;
+    --color-blue: #30638E;
+    --color-dark-blue: #003D5B;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100vh;
+    width: 100vw;
+} 
+
+.container{
+    display: grid;
+    grid-template-rows: 100vh;
+    grid-template-columns: 100vw;
+    grid-template-areas: 
+        "main"
+    ;
+
+    background: var(--color-yellow);
+}
+
+.main{
+    grid-area: main;
+
+    width: 80%;
+    height: 80%;
+
+    background: var(--color-metallic-blue);
+
+    padding: 8px ;
+    margin: auto;
+}
+
+.main .wrapper-tabs{
+    background: var(--color-red);
+}
