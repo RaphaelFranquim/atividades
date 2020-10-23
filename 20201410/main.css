@@ -1,9 +1,10 @@
 :root{
-    --color-yellow: #EDAE49;
-    --color-red: #D1495B;
-    --color-metallic-blue: #00798C;
-    --color-blue: #30638E;
-    --color-dark-blue: #003D5B;
+    --color-white: #f1f1f1;
+    --color-pink: #FF99C8;
+    --color-blond: #FCF6BD;
+    --color-aero-blue: #D0F4DE;
+    --color-uranium-blue: #A9DEF9;
+    --color-mauve: #E4C1F9;
 }
 
 *{
@@ -12,34 +13,212 @@
     box-sizing: border-box;
 }
 
-html, body{
-    height: 100vh;
-    width: 100vw;
-} 
+ul{
+    list-style: none;
+}
 
 .container{
     display: grid;
-    grid-template-rows: 100vh;
-    grid-template-columns: 100vw;
+    grid-template-rows: 90vh 90vh 90vh 90vh;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
-        "main"
+        "register-playlist show-playlist"
+        "register-gender show-gender"
+        "register-band show-band"
+        "register-music show-music"
     ;
-
-    background: var(--color-yellow);
 }
 
-.main{
-    grid-area: main;
-
-    width: 80%;
-    height: 80%;
-
-    background: var(--color-metallic-blue);
-
-    padding: 8px ;
-    margin: auto;
+.landing-page{
+    grid-area: landing-page;
 }
 
-.main .wrapper-tabs{
-    background: var(--color-red);
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playlist-item{
+    cursor: pointer;
+}
+
+
+h1{
+    margin: 8px 0;
+    font-style: italic;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 90%;
+    
+    border-radius: 8px;
+
+    background: var(--color-white);
+    -webkit-box-shadow: -5px 0px 8px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 0px 8px -4px rgba(0,0,0,0.75);
+    box-shadow: -5px 0px 8px -4px rgba(0,0,0,0.75);
+
+    padding: 16px;
+}
+
+button{
+    width: 100%;
+    border-radius: 50px;
+    padding: 8px;
+
+    border:none;
+    outline: none;
+
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(0.95);
+}
+
+.input-block{
+    display: flex;
+    align-items: center;
+}
+
+.input-block label{
+    margin-right: 8px;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.input-block input{
+    outline: none;
+
+    padding: 8px;
+}
+
+.list{
+    height: 300px;
+    width: 300px;
+    overflow-y: auto;
+    
+    background: var(--color-white);
+}
+
+.list li{
+    position: relative;
+
+    padding: 8px 0;
+}
+
+.checkbox-wrapper-music{
+    display: flex;
+    flex-direction: column;
+
+    height: 300px;
+
+    overflow-y: auto;
+}
+
+input[type="checkbox"]{
+    padding: 8px 0;
+}
+
+.register-playlist{
+    grid-area: register-playlist;
+
+    background: var(--color-pink);
+}
+
+.show-playlist{
+    grid-area: show-playlist;
+
+    background: var(--color-pink);
+}
+
+.register-gender{
+    grid-area: register-gender;
+
+    background: var(--color-uranium-blue);
+}
+
+.show-gender{
+    grid-area: show-gender;
+
+    background: var(--color-uranium-blue);
+}
+
+.register-band{
+    grid-area: register-band;
+
+    background: var(--color-mauve);
+}
+
+.show-band{
+    grid-area: show-band;
+
+    background: var(--color-mauve);
+}
+
+.register-music{
+    grid-area: register-music;
+
+    background: var(--color-aero-blue);
+}
+
+.show-music{
+    grid-area: show-music;
+
+    background: var(--color-aero-blue);
+}
+
+.modal-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 8, 0, .5);
+}
+
+.modal-container.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-wrapper{
+    position: relative;
+
+    width: 60%;
+    
+    min-width: 300px;
+    height: 600px;
+
+    background: var(--color-white);
+}
+
+.modal-container .dismiss{
+    position: absolute;
+
+    border-radius: 50%;
+
+    right: -15px;
+    top: -15px;
+
+    width: 40px;
+    height: 40px;
+}
+
+.modal-container .modal-wrapper .modal-body{
+    height: 600px;
+
+    overflow-y: auto;
+}
+
+.modal-container .modal-wrapper .modal-body iframe{
+    width: 100%;
 }

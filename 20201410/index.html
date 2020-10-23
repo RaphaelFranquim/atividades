@@ -1,29 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "./main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <script src = "./index.js"> </script>
     <title>Document</title>
 </head>
 <body>
     <section class = "container">
-        <main class = "main">
-            <div class = "wrapper-tabs">
-                <form id = "form-gender" class = "">
-                    <label for="gender">Gênero musical</label>
+        <div class = "register-playlist wrapper">
+            <h1>Criar playlist</h1>
+            <form id = "form-playlist">
+                <div class = "input-block">
+                    <label for="playlist">Nome: </label>
+                    <input
+                        id = "playlist"
+                        type="text"
+                        name = "playlist"
+                        placeholder="Playlist"
+                    />
+                </div>
+
+                <div class = "checkbox-wrapper-music">
+                        
+                </div>
+
+                <button type = "submit"> Criar </button>
+            </form>
+        </div>
+        <div class = "show-playlist wrapper">
+            <h1>Listagem de playlists</h1>
+            <ul class = "list-playlist list">
+                
+            </ul>
+        </div>
+
+        <div class = "register-gender wrapper">
+            <h1>Criar um novo gênero</h1>
+
+            <form id = "form-gender">
+                <div class="input-block">
+                    <label for="gender">Gênero:</label>
                     <input 
                         id = "gender"
                         type="text" 
                         name = "gender" 
                         placeholder="Gênero musical"
                     />
-                    <button type = "submit"> Cadastrar </button>
-                </form>
-            </div>
-        </main>
+                </div>
+                <button type = "submit"> Cadastrar </button>
+            </form>
+        </div>
+
+        <div class = "show-gender wrapper">
+            <h1>Listagem de gênero</h1>
+            <ul class = "list-gender list">
+                
+            </ul>
+        </div>
+
+        <div class="register-band wrapper">
+            <h1>Cadastrar bandas</h1>
+            <form id = "form-band">
+                <div class="input-block">
+                    <label for="band">Nome:</label>
+                    <input 
+                        id = "band" 
+                        type="text"
+                        name = "band"
+                        placeholder="Banda" 
+                    />
+                </div>
+                
+                <select 
+                    name="band-gender" 
+                    id="band-gender"
+                    class="gender-select"> 
+                </select>
+
+                <button type = "submit">Enviar</button>
+                
+            </form>
+        </div>
+
+        <div class="show-band wrapper">
+            <h1>Listagem de bandas</h1>
+            <ul class = "list-band list">
+
+            </ul>
+        </div>
+
+        <div class="register-music wrapper">
+            <h1>Cadastrar músicas</h1>
+            <form id = "form-music">
+                <div class="input-block">
+                    <label for="music">Nome:</label>
+                    <input 
+                        id = "music"
+                        type="text" 
+                        name = "music"
+                        placeholder="Música" 
+                    />
+                </div>
+                
+                <select
+                    class = "band-select"
+                    name="band-select">
+                </select>
+
+                <label for="music-url">Link da música</label>
+                <input 
+                    id = "music-url"
+                    type = "text"
+                    name = "music-url"
+                    placeholder="descricao"
+                />
+
+                <button type = "submit"> Enviar </button>
+            </form>
+        </div>
+
+        <div class="show-music wrapper">
+            <h1>Listagem de músicas</h1>
+            <ul class = "list-music list">
+
+            </ul>
+        </div>
     </section>
+    <div class = "modal-container" id = "modal-playlist">
+        <div class = "modal-wrapper">
+            <div class = "close-container">
+                <button id = "dismiss-playlist" class = "dismiss">x</button>
+            </div>
+            <div id = "modal-body-playlist" class = "modal-body">
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>
